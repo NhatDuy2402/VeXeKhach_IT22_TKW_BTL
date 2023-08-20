@@ -234,27 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
   //----------------------------------------------------------
   // 7. nút load khi chuyển trang, lỗi chưa fix
   {
-    const loadingIcon = document.getElementById('loading-icon');
-
-  // Lắng nghe sự kiện click trên các liên kết
-  const links = document.querySelectorAll('a');
-  links.forEach(link => {
-    link.addEventListener('click', event => {
-      // Ngăn chuyển hướng mặc định
-      event.preventDefault();
-
-      // Hiển thị biểu tượng loading
-      loadingIcon.style.display = 'inline-block';
-
-      // Ẩn biểu tượng sau khoảng thời gian 2 giây
-      setTimeout(() => {
-        loadingIcon.style.display = 'none';
-
-        // Thực hiện chuyển trang
-        window.location.href = link.href;
-      }, 2000); // 2 giây
-    });
-  });
   }
   //----------------------------------------------------------
   /*8. hàm ẩn hiện menu của header*/
