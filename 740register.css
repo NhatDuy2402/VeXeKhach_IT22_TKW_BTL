@@ -1,0 +1,12 @@
+.main {
+    width: 90%;
+    background-color: azure;
+}
+
+.Date {
+    display: none;
+}
+
+body{
+    background-image: url(./imgs/ads7.jpeg);
+}

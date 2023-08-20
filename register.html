@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="./740register.css" media="screen and (max-width: 740px)" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="register.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body class="flex">
+    <video id="video" src="./imgs/bg1.mp4" loop muted autoplay></video>
+
+    <div class="main">
+        
+       <div>
+            <h2>đăng ký</h2>
+            <p>nhanh chóng và dễ dàng</p>
+        </div>
+        <form action="">
+            <div class="inputs">
+                <div class="input">
+                    <div class="flex first">
+                        <i class="fa-solid fa-signature line-icon" style="color: #511f50;"></i>
+                        <div><input class="col1" type="text" placeholder="First Name" required></div>
+                        <div><input class="col2" type="text" placeholder="Surname"></div>
+                    </div>
+                </div>
+                <div class="input flex">
+                    <i class="fa-solid fa-user line-icon" style="color: #511f1f;"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input flex">
+                    <i class="fa-solid fa-envelope line-icon" style="color: #331f51;"></i>
+                    <input type="tel email" placeholder="Mobile number or email address" required>
+                </div>
+                <div class="input flex">
+                    <i class="fa-solid fa-lock line-icon" style="color: #a23510;"></i>
+                    <input type="password" placeholder="new password">
+                </div>
+                <div class="input flex">
+                    <i class="fa-solid fa-lock line-icon" style="color: #a23510;"></i>
+                    <input type="password" placeholder="enter the password">
+                </div>
+            </div>
+        </form>
+       
+       <section class="Date">
+            <div><h5>Date of birth</h5></div>
+            <label for="day">day:</label>
+            <select id="day" name="day"></select>
+
+            <label for="month">month:</label>
+            <select id="month" name="month"></select>
+
+            <label for="year">year:</label>
+            <select id="year" name="year"></select>
+
+            <script>
+                  // Lấy các phần tử select từ DOM
+                var daySelect = document.getElementById("day");
+                var monthSelect = document.getElementById("month");
+                var yearSelect = document.getElementById("year");
+
+                 // Tạo các tùy chọn cho ngày từ 1 đến 31
+                for (var day = 1; day <= 31; day++) {
+                    var option = document.createElement("option");
+                    option.value = day;
+                    option.text = day;
+                    daySelect.appendChild(option);
+                }
+
+                // Tạo các tùy chọn cho tháng từ 1 đến 12
+                for (var month = 1; month <= 12; month++) {
+                    var option = document.createElement("option");
+                    option.value = month;
+                    option.text = month;
+                    monthSelect.appendChild(option);
+                }
+
+                // Tạo các tùy chọn cho năm từ 1900 đến 2023
+                for (var year = 1900; year <= 2023; year++) {
+                    var option = document.createElement("option");
+                    option.value = year;
+                    option.text = year;
+                    yearSelect.appendChild(option);
+                }
+            </script>
+       </section>
+       <div class="buttons">
+            <h3>gender</h3>
+            <form id="genders flex">
+                <div class="flex btn">
+                        <div class="sex">
+                            <input type="radio" name="gender" value="male" id="male">
+                            <label for="male">Male</label>
+                        </div>
+                      
+                        <div class="sex">
+                            <input type="radio" name="gender" value="female" id="female">
+                            <label for="female">Female</label>
+                        </div>
+                        
+                        <div class="sex">
+                            <input type="radio" name="gender" value="custom" id="custom">
+                            <label for="custom">Custom</label>
+                        </div>
+                        
+                </div>
+            </form>
+       </div>
+       <div class="icons flex">
+        <a href="http://www.google-plus.com"><i class="fa-brands fa-google-plus-g icon" style="color: #da10b5;"></i>
+        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook icon" style="color: #05ff93;"></i>
+        </a>
+        <a href="http://www.twitter.com"><i class="fa-brands fa-twitter icon" style="color: #00e1ff;"></i>
+        </a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram icon" style="color: #be0aff;"></i></a>
+      </div>
+       <button class="flex">
+        
+            <a href="./index.html"><h2>Sign Up</h2></a>
+            
+            <div class="arrows ">
+                <div class="arrow"></div>
+            </div>
+       </button>
+    </div>
+</body>
+</html>

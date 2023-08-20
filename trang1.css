@@ -1,0 +1,973 @@
+/*---------------------VU LUAN -----------------*/
+* {
+    font-family: arial, sans-serif;
+}
+
+.margin-header {
+    margin: 0 auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+footer * {
+    margin: auto;
+    padding: 0;
+}
+
+header * {
+    margin: auto;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(238, 230, 214);
+}
+
+/*------------------------------------------*/
+.flex {
+    display: flex;
+}
+
+.bg {
+    background-color: mediumturquoise;
+    min-height: 34px;
+    width: 100%;
+}
+
+.mgr {
+    margin-right: 0.5rem;
+    color: white;
+}
+
+.mgl {
+    margin-left: 0.5rem;
+    color: white;
+}
+
+.signin {
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.signin:hover {
+    background-color: #19d259;
+}
+
+.signin-a,
+.flex>a {
+    color: white;
+    text-decoration: none;
+}
+
+.foot {
+    text-decoration: none;
+    color: darkturquoise;
+}
+
+.logo {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 70%;
+}
+
+.div-img {
+    width: 100px;
+}
+
+.img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+#menu ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#menu ul li {
+    display: inline-table;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    font-weight: bolder;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    display: block;
+    color: #eb5757;
+    border-radius: 10px;
+    font-size: large;
+    white-space: nowrap;
+}
+
+#menu ul li a:hover {
+    background-color: #19d259;
+    color: #fb6400;
+
+}
+
+#menu ul li>.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: mediumturquoise;
+    z-index: 9999;
+}
+
+#menu ul li:hover .sub-menu {
+    display: block;
+    border-radius: 10px;
+}
+
+.footer-hr {
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.footer-div {
+    width: 80%;
+}
+
+.footer-div-div1 {
+    padding-bottom: 15px;
+    width: 80%;
+}
+
+.footer-div-div1>h3,
+.footer-div-div1>h1,
+.footer-div-div1>p {
+    padding-bottom: 10px;
+    transform: scale(1);
+}
+
+.footer-div-div1>h3:hover,
+.footer-div-div1>h1:hover,
+.footer-div-div1>p:hover,
+.space>div:hover {
+    transform: scale(1.2);
+    color: #fb6400;
+}
+
+
+
+.footer-div-div2 {
+    width: 85%;
+    text-align: center;
+}
+
+.footer-div-div2-div1,
+.footer-div-div2-div3 {
+    padding-bottom: 15px;
+}
+
+.footer-div-div2-div2 {
+    background-color: orange;
+    font-size: small;
+    border-radius: 10px;
+}
+
+.footer-div-div2-div2>p {
+    border-right: 1px solid #111;
+    padding-right: 10px;
+}
+
+.footer-div-div2-div2>p:last-child {
+    border-right: none
+}
+
+.phone {
+    margin: 0;
+}
+
+footer {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(130, 253, 255, 0.916)), url(imgs/background.jpg);
+}
+
+.totop {
+    background-color: #fb6400;
+    color: white;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+}
+
+.totop.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+/* ---------------------NHAT DUY----------------- */
+/*header*/
+.show-nav {
+    display: none;
+    /* background-color: slategray; */
+    /* padding: 10px; */
+    width: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+    position: absolute;
+    top: 35%;
+    left: 5px;
+    transition: left 1s;
+    font-size: x-large;
+}
+
+.close {
+    font-size: xx-large;
+}
+
+#selec-header li.hide-on-large-screen {
+    display: none;
+}
+
+/*----------------------------------*/
+/*icon fixed*/
+.support {
+    position: fixed;
+    left: -3%;
+    bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 999;
+    transform: translate(-150px, 0);
+}
+
+.support a {
+    color: #1d1c1c;
+    background: rgb(206, 204, 199);
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    margin: 3px;
+    padding: 12px;
+    width: 200px;
+    text-align: left;
+    border-radius: 50px;
+    transition: 1s;
+    text-align: end;
+}
+
+.support a:hover {
+    transform: translate(100px, 0);
+}
+
+
+.icon-left {
+    font-size: x-large;
+}
+
+/*--------------------------------------------*/
+main {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+main>div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.flex {
+    display: flex;
+}
+
+*:hover {
+    transition: all 0.5s ease;
+}
+
+/*----------------------------------*/
+/* phần main của tuyến đường*/
+.routes {
+    width: 80%;
+    margin: 30px auto;
+    border: 2px solid #fb6400;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 1. điểm đi  điểm đến 3. thời gian đi  4. nút tìm kiếm*/
+.route-select-box {
+    width: 200px;
+    padding: 5px;
+    border: none;
+    max-width: 125px;
+    overflow: hidden;
+    border-radius: 20px;
+    text-align: center;
+    color: #121213;
+    background-color: rgb(238, 230, 214);
+    display: block;
+    max-width: 100%;
+}
+
+.route-select-box:focus {
+    outline: none;
+}
+
+
+/* button khứ hồi và một chiều*/
+.routes>div:first-child {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+/*điểm đi và điểm đến*/
+.route {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid #fb6400;
+    border-radius: 10px;
+    justify-content: center;
+    width: 15%;
+    margin: 0;
+    padding: 0;
+}
+
+.search-routes {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 75%;
+    left: 40%;
+    padding: 0 20px;
+    width: 15%;
+}
+
+/*chiều dai thanh date*/
+input[type="date"] {
+    width: 115px;
+}
+
+/*mũi tên*/
+.img-arrow {
+    margin: auto 0;
+}
+
+/* hiệu ứng mũi tên*/
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+/*hiệu ứng quy khi hover chuột*/
+.img-arrow:hover {
+    animation: rotate .4s linear 1;
+}
+
+/*kích thức img xe bus*/
+.search-routes>img {
+    width: 50%;
+}
+
+.titles-sub {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+    margin: 5% auto;
+    width: 70%;
+    /* border: 1px solid #111; */
+    background-color: green;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+.titles-sub>li:first-child {
+    /* border-right:  1px solid #111; */
+    padding-right: 20%;
+}
+
+/*---------------------NHAT DUY-----------------*/
+
+
+.hidden {
+    display: none;
+}
+
+/*----------------------------------*/
+/*nút tìm kiếm*/
+#search-btn {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #fb6400;
+    border-radius: 15px;
+    width: 250px;
+    height: 50px;
+    font-size: large;
+    color: white;
+    background-color: #fb6400;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    top: -50px;
+
+}
+
+/* hiệu ứng di chuyển img xe bus*/
+.search-routes>.search-bus {
+    transition: transform 1.2s ease;
+}
+
+.search-routes:hover .search-bus {
+    transform: translateX(100%);
+}
+
+.titles-sub {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+    margin: 5% auto;
+    width: 70%;
+    /* border: 1px solid #111; */
+    background-color: green;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+.titles-sub>li:first-child {
+    /* border-right:  1px solid #111; */
+    padding-right: 20%;
+}
+
+/*---------------------------------------*/
+/* main bảng thông tin chuyến đi*/
+.tab-container {
+    width: 500px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    background: #f2f2f2;
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.tab-container span {
+    animation: changeColor 5s infinite;
+}
+
+.tab-container:hover {
+    border: 5px solid #fb6400;
+    /* transition: all 0.5s ease; */
+}
+
+.tab {
+    padding: 20px;
+}
+
+/* phan thong tin va điểm đón xe */
+.tab-switch {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tab-switch li {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 20px 0 20px;
+    border-radius: 5px;
+}
+
+.tab-switch li.active {
+    background-color: mediumturquoise;
+    border-bottom: 4px solid sienna;
+}
+
+.tab-pane {
+    display: none;
+    line-height: 1.5;
+
+}
+
+.tab-pane>p {
+    text-align: justify;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/*------------------------------------*/
+.route-main {
+    width: 90%;
+    margin: 3% auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.route-main:hover {
+    border: 5px solid #19d259;
+    border-radius: 10px;
+    /* transition: all 0.5s ease; */
+
+}
+
+
+.countdown {
+    margin: 10px 0;
+    padding: 0;
+    font-weight: bolder;
+    list-style-type: none;
+}
+
+.table-time {
+    font-weight: bolder;
+    list-style-type: none;
+    border-radius: 5px 5px 0 0;
+    padding: 0;
+    color: aliceblue;
+    background-color: #eb5757;
+    justify-content: space-between;
+    margin: 5px 0;
+    height: 35px;
+}
+
+.table-time2 {
+    font-weight: bolder;
+    list-style-type: none;
+    border-radius: 5px 5px 0 0;
+    padding: 0;
+    color: aliceblue;
+    background-color: steelblue;
+    justify-content: space-between;
+    margin: 5px 0;
+    height: 35px;
+}
+
+.route {
+    position: relative;
+    overflow: hidden;
+}
+
+#room1 {
+    width: 20%;
+    border-radius: 5px;
+    float: left;
+    margin: 15px 0;
+    display: block;
+    max-width: 100%;
+}
+
+.route-1 {
+    margin-top: 50px;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.route-1>li:nth-child(2) {
+    font-size: smaller;
+    text-decoration: line-through;
+}
+
+.route-2 {
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.route-2>li:nth-child(2) {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.route-3 {
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.clear {
+    clear: left;
+}
+
+/*------------------------------------*/
+/*chỗ ngồi*/
+.Reservations {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #fb6400;
+    border-radius: 10px;
+    margin: 0px auto;
+    position: relative;
+
+}
+
+.Reservations:hover {
+    box-shadow: 0px 15px 20px rgba(226, 134, 28, 0.678);
+    /* transition: all 0.5s ease; */
+}
+
+.Reservations .instruct {
+    width: 60%;
+    list-style-type: none;
+    margin: 30px auto;
+    padding: 0;
+    justify-content: space-evenly;
+    font-size: larger;
+}
+
+.Reservations ul:nth-child(3) {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    justify-content: space-evenly;
+    font-size: larger;
+}
+
+.Reservations ul:nth-child(2) {
+    width: 60%;
+    list-style-type: none;
+    margin: 0 auto 20px;
+    padding: 0;
+    justify-content: space-evenly;
+    font-size: larger;
+}
+
+.Reservations .seat-selection {
+    justify-content: space-around;
+}
+
+/* Hàng ghế trái*/
+.Reservations div.left {
+    /* background-color: #eb5757; */
+    width: 40%;
+    flex-wrap: wrap;
+}
+
+.seat-selection {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.seat-selection p {
+    width: 33%;
+    justify-content: space-between;
+    font-size: 40px;
+    margin: 0 0 3px 0;
+}
+
+/* Hàng ghế phải*/
+.Reservations div.right {
+    /* background-color: blueviolet; */
+    width: 40%;
+    flex-wrap: wrap;
+}
+
+.Reservations .Notification {
+    width: 70%;
+    list-style: none;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 0;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+
+
+/* nút close đóng phần chọn ghế*/
+.close-seat {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 180%;
+}
+
+#hide-section-btn1,
+#hide-section-btn2,
+#hide-section-btn3,
+#hide-section-btn4,
+#hide-section-btn5 {
+    color: #ded4d3;
+}
+
+#hide-section-btn1:hover,
+#hide-section-btn2:hover,
+#hide-section-btn3:hover,
+#hide-section-btn4:hover,
+#hide-section-btn5:hover {
+    color: #eb5757;
+}
+
+/*------------ -----------------*/
+/* Trạng thái ghế đã chọn */
+
+.color-seat {
+    color: #ebe6e6;
+}
+
+#color-seat2 {
+    color: #19d259;
+
+}
+
+.seat-text {
+    color: slateblue;
+}
+
+
+.bg-nav {
+    width: 100%;
+    height: 150px;
+    background-image: url('./imgs/bus8.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/*quảng cáo 2 bên*/
+.ads>div {
+    width: 17%;
+    height: 50%;
+    margin-top: 28%;
+    position: absolute;
+    text-align: center;
+    border-radius: 15px;
+    border: 5px double;
+    animation: changeColor 3s infinite;
+}
+
+.ads>.left-ads {
+    left: 5%;
+}
+
+.ads>.right-ads {
+    right: 5%;
+}
+
+aside>div>img {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    margin: 0;
+}
+
+.ads>div>p {
+    font-size: large;
+    /* color: #19d259; */
+    animation: changeColor 3s infinite;
+}
+
+@keyframes changeColor {
+
+    0%,
+    100% {
+        color: rgb(216, 90, 7);
+    }
+
+    25% {
+        color: rgb(13, 238, 99);
+    }
+
+    50% {
+        color: rgb(27, 166, 190);
+    }
+
+    75% {
+        color: rgb(148, 21, 221);
+    }
+}
+
+.choose-seat-btn {
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 0 10px 10px 0;
+    background: linear-gradient(to bottom right, rgb(224, 80, 80), rgb(236, 236, 88), rgb(52, 196, 52))
+}
+
+.route>label {
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+/*--------------------------------------------*/
+
+.more-infomation {
+    color: #708cbd;
+    margin: 0 auto;
+    padding: 0;
+    width: 10%;
+}
+
+.more-infomation:hover {
+    font-weight: bolder;
+    transform: scale(1.2);
+    color: #fb6400;
+}
+
+.more-img a>img {
+    width: 130px;
+    margin-top: 5px;
+}
+
+.icon-footer {
+    display: inline-flex;
+}
+
+.icon-footer>a {
+    margin: 0 15px;
+    font-size: xx-large;
+}
+
+.icon-footer .my-element {
+    position: relative;
+    display: contents;
+}
+
+.icon-footer a span {
+    margin: 0;
+}
+
+/*cuộn hiện từ từ*/
+.reveal {
+    position: relative;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.Btn-close {
+    background: linear-gradient(rgb(26, 160, 238), rgb(9, 226, 179), rgb(89, 185, 93));
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+
+}
+
+.Btn-close:hover {
+    border: 1px solid lightcyan;
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.continue {
+    background-color: #dbdbdb;
+   position: fixed;
+    border: 10px solid violet;
+    border-radius: 20px;
+     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+     z-index: 999;
+     padding: 50px;
+     left: 38%;
+     top: 35%;
+}
+
+.continue > h2 {
+    color: #19d259;
+}
+.continue > p{
+    animation: changeColor 3s infinite;
+}
+.continue > button {
+    border-radius: 10px;
+    padding: 20px;
+    width: 70%;
+    left: 13%;
+    bottom: 9%;
+    margin: 20px 0 0;
+    position: relative;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    font-size: large;
+    color: #fb6400;
+}
+
+.continue > button:hover{
+    background-color: #19d259;
+    border: 1px solid lightcyan;
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+#popup {
+    display: none;
+  }
+
+/* Ngăn việc chọn văn bản */
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
+}
+
+/* Thay đổi biểu tượng chuột */
+.no-select:hover {
+    cursor: not-allowed;
+}
+
+/*cố định header*/
+header {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 1px solid #f5f5f5;
+ 
+ }
+ 
+ main {
+    padding-top: 10%;
+ }
+ 
+ .bg-nav {
+    height: 80px;
+ }
+ 
+ .img{
+    height: 50px;
+    width: 60px;
+ }
+ 

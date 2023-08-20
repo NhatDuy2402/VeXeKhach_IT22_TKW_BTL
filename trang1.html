@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuyến đường</title>
+    <link rel="shortcut icon" href="imgs/shortcut.png">
+    <link rel="stylesheet" href="./trang1.css">
+    <link rel="stylesheet" href="./mobile740-trang1.css" media="screen and (max-width: 740px)" />
+    <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="./trang1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body >
+    <header>
+        <section>
+            <div class="flex bg">
+                <div class="flex">
+                    <a href="#">
+                        <div class="mgr">&#9743;19000019</div>
+                    </a>
+                    <a href="#">
+                        <div class="mgl">&#9993;hotro@vexekhach.vn</div>
+                    </a>
+                </div>
+                <div class="signin">
+                    <a class="signin-a" href="./register.html">
+                        <div>Đăng nhập</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <nav class="bg-nav">
+            <section class="logo">
+                <div class="flex">
+                    <a class="div-img" href=""><img class="img" src="imgs/Vé Xe Khách.png" alt="logo"></a>
+
+                    <nav id="menu">
+                        <ul id="selec-header" class="selec-header">
+                            <li><a href="index.html">TRANG CHỦ</a></li>
+                            <li><a href="#">LỊCH TRÌNH</a></li>
+                            <li><a href="trang3.html">LIÊN HỆ</a></li>
+                            <li><a href="#">HÓA ĐƠN</a></li>
+                            <li>
+                                <a class="visited" href="#">LIÊN KẾT</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://futabus.vn/" target="_blank">FUTABusLines</a></li>
+                                    <li><a href="https://vexere.com/" target="_blank">VeXeRe</a></li>
+                                    <li><a href="https://megabus.vn/" target="_blank">Megabus</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="trang2.html">VỀ CHÚNG TÔI</a></li>
+                            <li class="hide-on-large-screen"><a href="javascrpt:;"><i
+                                        class="fa-solid fa-square-xmark close" style="color: #30c081;"></i></a></li>
+                        </ul>
+                        <a href="javascript:;" class="show-nav"><i class="fa-solid fa-bars icon-menu"
+                                style="color: #17ccd9; "></i></a>
+                    </nav>
+                </div>
+            </section>
+        </nav>
+    </header>
+
+    <aside class="ads ">
+        <div class="left-ads">
+            <img id="image1" src="./imgs/ads1.jpeg" alt="bus-ads">
+            <p>an toàn trên từng chuyến đi</p>
+        </div>
+        <div class="right-ads">
+            <img id="image2" src="./imgs/ads2.jpeg" alt="">
+            <p>Đồng hành cùng bạn trên mọi nẻo đường.</p>
+        </div>
+    </aside>
+
+    <main>
+        <div>
+            <!-- khung lựa chọn điểm đến, điểm đi, tìm kiếm -->
+            <div class="routes flex">
+                <div>
+                    <label>
+                        <input type="radio" name="trip-type" value="oneway">Một chiều
+                    </label>
+
+                    <label>
+                        <input type="radio" name="trip-type" value="roundtrip">Khứ hồi
+                    </label>
+                </div>
+
+                <div class="route">
+                    <label for="departure">điểm đi</label>
+                    <select id="departure" class="route-select-box">
+                        <option value="">Chọn điểm đi</option>
+                        <option value="sg">TP. Hồ Chí Minh</option>
+                        <option value="dl">Đà Lạt</option>
+                        <option value="nt">Nha Trang</option>
+                        <option value="dn">Đà Nẵng</option>
+                    </select>
+                </div>
+                <div>
+                    <i class="fa-solid fa-right-left img-arrow" style="color: #ff7300;"></i>
+                </div>
+                <div class="route">
+                    <label for="destination">điểm đến</label>
+                    <select id="destination" class="route-select-box">
+                        <option value="">Chọn điểm đến</option>
+                        <option value="vt">An Giang</option>
+                        <option value="kh">Khánh Hòa</option>
+                        <option value="nb">Ninh Bình</option>
+                        <option value="bd">Bình Định</option>
+                        <option value="qg">Quảng Ngãi</option>
+                    </select>
+                </div>
+                <div class="route">
+                    <label for="depart-date">Ngày Đi</label>
+                    <input id="depart-date" type="date" id="departure-time" class="route-select-box">
+                </div>
+                <div class="route">
+                    <label for="return-date">Ngày về</label>
+                    <input id="return-date" type="date" id="departure-time" class="route-select-box">
+                </div>
+            </div>
+            <button id="search-btn" class="route-select-box"><i class="fa-solid fa-magnifying-glass"
+                    style="color: rgb(214, 213, 207);"></i>Tìm kiếm</button>
+
+
+
+            <!-- Thông báo thông tin tuyến đường đã chọn và bến xe -->
+            <div class="tab-container ">
+                <div>
+                    <ul class="tab-switch">
+                        <li class="active" data-tab="tab1">Thông tin chung</li>
+                        <li data-tab="tab2">Điểm đón xe</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <p> Thời gian dự kiến: 5h</p>
+                        <p> Thời Gian Xuất Phát: 1h, 5h, 8h, 14h, 19h</p>
+                        <p>Quãng đường: 190km</p>
+                        <p>Bến đi: Bến xe miền tây</p>
+                        <p><span>* Lưu ý</span>: thời gian đón và trung chuyển xe có thể thay đổi phụ thuộc vào mật độ
+                            giao thông tại từng thời điểm. Kính mong quý hành khách thông cảm! </p>
+                    </div>
+
+                    <div id="tab2" class="tab-pane">
+                        <p>Address: 395 Đ. Kinh Dương Vương, An Lạc, Bình Tân, TP Hồ Chí Minh</p>
+                        <p>destination address: 392, P, Phạm Cư Lượng, TP.Long Xuyên, An Giang</p>
+                        <p>destination address: QL91, Vĩnh Mỹ, Châu Đốc, Châu Phú B</p>
+                        <p>destination address: ấp voi 2, tt Chi Lăng, Thị xã Tịnh Biên, An Giang</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- XE 1 -->
+            <div id="car1" class="reveal">
+                <section>
+                    <!-- khung thông báo tuyến đường -->
+                    <div class="route-main">
+
+                        <div class="table-time2 flex">
+                            <p><i class="fa-solid fa-fire fa-beat-fade" style="color: #ffde05;"></i> ƯU ĐÃI GIÁ CHÓT</p>
+
+                            <ul class="countdown flex">
+                                <li><i class="fa-solid fa-bolt fa-beat" style="color: #fbff1a;"></i></li>
+                                <li class="reverse-time1"></i>Kết thúc trong: 8:00:00</li>
+                            </ul>
+                        </div>
+
+                        <img id="room1" src="./imgs/1.jpeg" alt="room 1">
+                        <ul class="route-1 flex">
+                            <li>Limousine 36 giường</li>
+                            <li>320.000 đ</li>
+                        </ul>
+
+                        <ul class="route-2 flex">
+                            <li><i class="fa-solid fa-bus" style="color: #45328b;"></i> 01:00 ----- <i
+                                    class="fa-solid fa-location-dot" style="color: #1b4ea7;"></i> 6:00</li>
+                            <li>260.000 đ</li>
+                        </ul>
+
+                        <ul class="route-3 flex">
+                            <li>Thông tin chi tiết <i class="fa-solid fa-circle-chevron-down"
+                                    style="color: #0d45a5;"></i>
+                            </li>
+                            <li><button id="choose-seat-btn1" class="choose-seat-btn btn-label"> Chọn Chỗ </button></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- bảng ẩn, khi nhấn button chọn ghế thì hiện lên -->
+                <section class="Reservations clear hidden" id="reservationSection1">
+                    <!-- thông báo các bước tiến hành -->
+                    <ul class="flex instruct">
+                        <li><i class="fa-solid fa-1" style="color: #0453dc;"></i> Chọn Chỗ</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-2" style="color: #731111;"></i> Điểm Đón, Trả</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-3" style="color: #620e0e;"></i> Nhập Thông Tin</li>
+                    </ul>
+                    <!-- ghế trống hay hết -->
+                    <ul class="flex phanLoai">
+                        <li><i class="fa-solid fa-mattress-pillow" style="color: #ebe6e6;"></i> Còn Trống</li>
+                        <li><i class="fa-solid fa-mattress-pillow" style="color: #f4d7d7;"></i> Ghế Không Bán</li>
+                        <li><i id="color-seat2" class="fa-solid fa-mattress-pillow"></i> Đang Chọn</li>
+                    </ul>
+                    <!-- tầng dưới và tầng trên -->
+                    <ul class="flex phanLoai">
+                        <li>Tầng Dưới</li>
+                        <li>Tầng Trên</li>
+                    </ul>
+                    <!-- phần điều chỉnh ghế bên phải và trái -->
+                    <div class="flex seat-selection">
+                        <!-- ghế tầng dưới -->
+                        <div class="left flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A1"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B11"></i></i>
+                            </p>
+
+
+                        </div>
+                        <!-- ghế tầng trên -->
+                        <div class="right flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C12"></i></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- thông báo số ghế, số tiền -->
+                    <ul class="Notification flex">
+                        <li id="selectedSeat">Số Ghế:<span class="seat-text">Chưa Chọn Ghế</span> </li>
+                        <li id="totalAmount">Tổng Cộng: <span class="seat-text">0đ</span></li>
+                        <li><button class="Btn-close continueBtn">Tiếp Tục</button></li>
+                    </ul>
+                    <i id="hide-section-btn1" class="fa-solid fa-square-xmark close-seat"></i>
+                </section>
+            </div>
+
+            <!-- XE 2 -->
+            <div id="car2" class="reveal">
+                <section>
+                    <!-- khung thông báo tuyến đường -->
+                    <div class="route-main">
+
+                        <div class="table-time flex">
+                            <p><i class="fa-solid fa-fire fa-beat-fade" style="color: #ffde05;"></i> ƯU ĐÃI GIÁ CHÓT</p>
+
+                            <ul class="countdown flex">
+                                <li><i class="fa-solid fa-bolt fa-beat" style="color: #fbff1a;"></i></li>
+                                <li class="reverse-time2"></i>Kết thúc trong: 8:00:00</li>
+                            </ul>
+                        </div>
+
+                        <img id="room1" src="./imgs/giường nằm 1.jpg" alt="room 1">
+                        <ul class="route-1 flex">
+                            <li>Limousine 36 giường</li>
+                            <li>320.000 đ</li>
+                        </ul>
+
+                        <ul class="route-2 flex">
+                            <li><i class="fa-solid fa-bus" style="color: #45328b;"></i> 5:00 ----- <i
+                                    class="fa-solid fa-location-dot" style="color: #1b4ea7;"></i> 10:00</li>
+                            <li>240.000 đ</li>
+                        </ul>
+
+                        <ul class="route-3 flex">
+                            <li>Thông tin chi tiết <i class="fa-solid fa-circle-chevron-down"
+                                    style="color: #0d45a5;"></i>
+                            </li>
+                            <li><button id="choose-seat-btn2" class=" choose-seat-btn btn-label"> Chọn Chỗ </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- bảng ẩn, khi nhấn button chọn ghế thì hiện lên -->
+                <section class="Reservations clear hidden" id="reservationSection2">
+                    <!-- thông báo các bước tiến hành -->
+                    <ul class="flex instruct">
+                        <li><i class="fa-solid fa-1" style="color: #0453dc;"></i> Chọn Chỗ</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-2" style="color: #731111;"></i> Điểm Đón, Trả</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-3" style="color: #620e0e;"></i> Nhập Thông Tin</li>
+                    </ul>
+                    <!-- ghế trống hay hết -->
+                    <ul class="flex phanLoai">
+                        <li><i class="fa-solid fa-mattress-pillow" style="color: #ebe6e6;"></i> Còn Trống</li>
+                        <li><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;"></i> Ghế Không Bán</li>
+                        <li><i id="color-seat2" class="fa-solid fa-mattress-pillow"></i> Đang Chọn</li>
+                    </ul>
+                    <!-- tầng dưới và tầng trên -->
+                    <ul class="flex phanLoai">
+                        <li>Tầng Dưới</li>
+                        <li>Tầng Trên</li>
+                    </ul>
+                    <!-- phần điều chỉnh ghế bên phải và trái -->
+                    <div class="flex seat-selection">
+                        <!-- ghế tầng dưới -->
+                        <div class="left flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A1"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B11"></i></i>
+                            </p>
+
+
+                        </div>
+                        <!-- ghế tầng trên -->
+                        <div class="right flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C12"></i></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- thông báo số ghế, số tiền -->
+                    <ul class="Notification flex">
+                        <li id="selectedSeat">Số Ghế:<span class="seat-text">Chưa Chọn Ghế</span> </li>
+                        <li id="totalAmount">Tổng Cộng: <span class="seat-text">0đ</span></li>
+                        <li><button class="Btn-close continueBtn">Tiếp Tục</button></li>
+                    </ul>
+                    <i id="hide-section-btn2" class="fa-solid fa-square-xmark close-seat"></i>
+                </section>
+            </div>
+
+            <!-- XE 3 -->
+            <div id="car3" class="reveal">
+                <section>
+                    <!-- khung thông báo tuyến đường -->
+                    <div class="route-main">
+
+                        <div class="table-time2 flex">
+                            <p><i class="fa-solid fa-fire fa-beat-fade" style="color: #ffde05;"></i> ƯU ĐÃI GIÁ CHÓT</p>
+
+                            <ul class="countdown flex">
+                                <li><i class="fa-solid fa-bolt fa-beat" style="color: #fbff1a;"></i></li>
+                                <li class="reverse-time3"></i>Kết thúc trong: 8:00:00</li>
+                            </ul>
+                        </div>
+
+                        <img id="room1" src="./imgs/giường nằm 3.jpg" alt="room 1">
+                        <ul class="route-1 flex">
+                            <li>Limousine 36 giường</li>
+                            <li>320.000 đ</li>
+                        </ul>
+
+                        <ul class="route-2 flex">
+                            <li><i class="fa-solid fa-bus" style="color: #45328b;"></i> 8:00 ----- <i
+                                    class="fa-solid fa-location-dot" style="color: #1b4ea7;"></i> 13:00</li>
+                            <li>255.000 đ</li>
+                        </ul>
+
+                        <ul class="route-3 flex">
+                            <li>Thông tin chi tiết <i class="fa-solid fa-circle-chevron-down"
+                                    style="color: #0d45a5;"></i>
+                            </li>
+                            <li><button id="choose-seat-btn2" class=" choose-seat-btn btn-label"> Chọn Chỗ </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- bảng ẩn, khi nhấn button chọn ghế thì hiện lên -->
+                <section class="Reservations clear hidden" id="reservationSection3">
+                    <!-- thông báo các bước tiến hành -->
+                    <ul class="flex instruct">
+                        <li><i class="fa-solid fa-1" style="color: #0453dc;"></i> Chọn Chỗ</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-2" style="color: #731111;"></i> Điểm Đón, Trả</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-3" style="color: #620e0e;"></i> Nhập Thông Tin</li>
+                    </ul>
+                    <!-- ghế trống hay hết -->
+                    <ul class="flex phanLoai">
+                        <li><i class="fa-solid fa-mattress-pillow" style="color: #ebe6e6;"></i> Còn Trống</li>
+                        <li><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;"></i> Ghế Không Bán</li>
+                        <li><i id="color-seat2" class="fa-solid fa-mattress-pillow"></i> Đang Chọn</li>
+                    </ul>
+                    <!-- tầng dưới và tầng trên -->
+                    <ul class="flex phanLoai">
+                        <li>Tầng Dưới</li>
+                        <li>Tầng Trên</li>
+                    </ul>
+                    <!-- phần điều chỉnh ghế bên phải và trái -->
+                    <div class="flex seat-selection">
+                        <!-- ghế tầng dưới -->
+                        <div class="left flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A1"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B11"></i></i>
+                            </p>
+
+
+                        </div>
+                        <!-- ghế tầng trên -->
+                        <div class="right flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C12"></i></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- thông báo số ghế, số tiền -->
+                    <ul class="Notification flex">
+                        <li id="selectedSeat">Số Ghế:<span class="seat-text">Chưa Chọn Ghế</span> </li>
+                        <li id="totalAmount">Tổng Cộng: <span class="seat-text">0đ</span></li>
+                        <li><button class="Btn-close continueBtn">Tiếp Tục</button></li>
+                    </ul>
+                    <i id="hide-section-btn3" class="fa-solid fa-square-xmark close-seat"></i>
+                </section>
+            </div>
+
+            <!-- XE 4 -->
+            <div id="car4" class="reveal">
+                <section>
+                    <!-- khung thông báo tuyến đường -->
+                    <div class="route-main">
+
+                        <div class="table-time flex">
+                            <p><i class="fa-solid fa-fire fa-beat-fade" style="color: #ffde05;"></i> ƯU ĐÃI GIÁ CHÓT</p>
+
+                            <ul class="countdown flex">
+                                <li><i class="fa-solid fa-bolt fa-beat" style="color: #fbff1a;"></i></li>
+                                <li class="reverse-time4"></i>Kết thúc trong: 8:00:00</li>
+                            </ul>
+                        </div>
+
+                        <img id="room1" src="./imgs/giường nằm 7.webp" alt="room 1">
+                        <ul class="route-1 flex">
+                            <li>Limousine 36 giường</li>
+                            <li>320.000 đ</li>
+                        </ul>
+
+                        <ul class="route-2 flex">
+                            <li><i class="fa-solid fa-bus" style="color: #45328b;"></i> 14:00 ----- <i
+                                    class="fa-solid fa-location-dot" style="color: #1b4ea7;"></i> 19:00</li>
+                            <li>235.000 đ</li>
+                        </ul>
+
+                        <ul class="route-3 flex">
+                            <li>Thông tin chi tiết <i class="fa-solid fa-circle-chevron-down"
+                                    style="color: #0d45a5;"></i>
+                            </li>
+                            <li><button id="choose-seat-btn2" class=" choose-seat-btn btn-label"> Chọn Chỗ </button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- bảng ẩn, khi nhấn button chọn ghế thì hiện lên -->
+                <section class="Reservations clear hidden" id="reservationSection4">
+                    <!-- thông báo các bước tiến hành -->
+                    <ul class="flex instruct">
+                        <li><i class="fa-solid fa-1" style="color: #0453dc;"></i> Chọn Chỗ</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-2" style="color: #731111;"></i> Điểm Đón, Trả</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-3" style="color: #620e0e;"></i> Nhập Thông Tin</li>
+                    </ul>
+                    <!-- ghế trống hay hết -->
+                    <ul class="flex phanLoai">
+                        <li><i class="fa-solid fa-mattress-pillow" style="color: #ebe6e6;"></i> Còn Trống</li>
+                        <li><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;"></i> Ghế Không Bán</li>
+                        <li><i id="color-seat2" class="fa-solid fa-mattress-pillow"></i> Đang Chọn</li>
+                    </ul>
+                    <!-- tầng dưới và tầng trên -->
+                    <ul class="flex phanLoai">
+                        <li>Tầng Dưới</li>
+                        <li>Tầng Trên</li>
+                    </ul>
+                    <!-- phần điều chỉnh ghế bên phải và trái -->
+                    <div class="flex seat-selection">
+                        <!-- ghế tầng dưới -->
+                        <div class="left flex">
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A1"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B11"></i></i>
+                            </p>
+
+
+                        </div>
+                        <!-- ghế tầng trên -->
+                        <div class="right flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C12"></i></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- thông báo số ghế, số tiền -->
+                    <ul class="Notification flex">
+                        <li id="selectedSeat">Số Ghế:<span class="seat-text">Chưa Chọn Ghế</span> </li>
+                        <li id="totalAmount">Tổng Cộng: <span class="seat-text">0đ</span></li>
+                        <li><button class="Btn-close continueBtn">Tiếp Tục</button></li>
+                    </ul>
+                    <i id="hide-section-btn4" class="fa-solid fa-square-xmark close-seat"></i>
+                </section>
+            </div>
+
+            <!-- XE 5 -->
+            <div id="car5" class="reveal">
+                <section>
+                    <!-- khung thông báo tuyến đường -->
+                    <div class="route-main">
+
+                        <div class="table-time2 flex">
+                            <p><i class="fa-solid fa-fire fa-beat-fade" style="color: #ffde05;"></i> ƯU ĐÃI GIÁ CHÓT</p>
+
+                            <ul class="countdown flex">
+                                <li><i class="fa-solid fa-bolt fa-beat" style="color: #fbff1a;"></i></li>
+                                <li class="reverse-time5"></i>Kết thúc trong: 8:00:00</li>
+                            </ul>
+                        </div>
+
+                        <img id="room1" src="./imgs/giường nằm 6.jpg" alt="room 1">
+                        <ul class="route-1 flex">
+                            <li>Limousine 36 giường</li>
+                            <li>320.000 đ</li>
+                        </ul>
+
+                        <ul class="route-2 flex">
+                            <li><i class="fa-solid fa-bus" style="color: #45328b;"></i> 19:00 ----- <i
+                                    class="fa-solid fa-location-dot" style="color: #1b4ea7;"></i>00:00</li>
+                            <li>250.000 đ</li>
+                        </ul>
+
+                        <ul class="route-3 flex">
+                            <li>Thông tin chi tiết <i class="fa-solid fa-circle-chevron-down"
+                                    style="color: #0d45a5;"></i>
+                            </li>
+                            <li><button id="choose-seat-btn2" class=" choose-seat-btn btn-label"> Chọn Chỗ </button>
+                            </li>
+                        </ul>
+                            
+                    </div>
+                </section>
+
+                <!-- bảng ẩn, khi nhấn button chọn ghế thì hiện lên -->
+                <section class="Reservations clear hidden" id="reservationSection5">
+                    <!-- thông báo các bước tiến hành -->
+                    <ul class="flex instruct">
+                        <li><i class="fa-solid fa-1" style="color: #0453dc;"></i> Chọn Chỗ</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-2" style="color: #731111;"></i> Điểm Đón, Trả</li>
+                        <li><i class="fa-solid fa-arrow-right" style="color: #1269ba;"></i></li>
+                        <li><i class="fa-solid fa-3" style="color: #620e0e;"></i> Nhập Thông Tin</li>
+                    </ul>
+                    <!-- ghế trống hay hết -->
+                    <ul class="flex phanLoai">
+                        <li><i class="fa-solid fa-mattress-pillow" style="color: #ebe6e6;"></i> Còn Trống</li>
+                        <li><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;"></i> Ghế Không Bán</li>
+                        <li><i id="color-seat2" class="fa-solid fa-mattress-pillow"></i> Đang Chọn</li>
+                    </ul>
+                    <!-- tầng dưới và tầng trên -->
+                    <ul class="flex phanLoai">
+                        <li>Tầng Dưới</li>
+                        <li>Tầng Trên</li>
+                    </ul>
+                    <!-- phần điều chỉnh ghế bên phải và trái -->
+                    <div class="flex seat-selection">
+                        <!-- ghế tầng dưới -->
+                        <div class="left flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A1"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C1"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C3"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat"" data-name=" B5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C5"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C7"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C9"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B11"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B11"></i></i>
+                            </p>
+
+
+                        </div>
+                        <!-- ghế tầng trên -->
+                        <div class="right flex">
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C2"></i></i>
+                            </p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C4"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C6"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="A8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C8"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="B10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow empty-seat color-seat" data-name="C10"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="A12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="B12"></i></p>
+                            <p><i class="fa-solid fa-mattress-pillow no-select" style="color: #f4d7d7;" data-name="C12"></i></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- thông báo số ghế, số tiền -->
+                    <ul class="Notification flex">
+                        <li id="selectedSeat">Số Ghế:<span class="seat-text">Chưa Chọn Ghế</span> </li>
+                        <li id="totalAmount">Tổng Cộng: <span class="seat-text">0đ</span></li>
+                        <li><button class="Btn-close continueBtn">Tiếp Tục</button></li>
+                    </ul>
+                    <i id="hide-section-btn5" class="fa-solid fa-square-xmark close-seat"></i>
+                </section>
+            </div>
+
+            <div class="continue" id="popup">
+                <h2>ĐẶT VÉ THÀNH CÔNG <i class="fa-regular fa-circle-check fa-beat" style="color: #2eda0b;"></i></h2>
+                <p><i class="fa-solid fa-arrows-to-dot icon-continue"></i> Chúc Bạn có chuyển đi vui vẻ <i class="fa-solid fa-arrows-to-dot icon-continue"></i></p>
+                <button id="closePopup">Nhấn Để Tiếp Tục </button>
+            </div>
+          
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-hr">
+            <hr>
+        </div>
+        <div class="footer-div">
+            <div class="footer-div-div1">
+                <h3>TỔNG ĐÀI ĐẶT VÉ VÀ CSKH</h3>
+                <h1><a class="foot" href="#">1900 0019</a></h1>
+                <p>CÔNG TY CỔ PHẦN VÉ XE KHÁCH</p>
+                <p>Địa chỉ: Số 371 Nguyễn Kiệm, Phường 3, Quận Gò Vấp, Thành Phố Hồ Chí Minh, Việt Nam</a></p>
+                <p>Email: <a class="foot" href="#">hotro@vexekhach.vn</a></p>
+                <div class="flex space">
+                    <div class="phone">Điện thoại: <a class="foot" href="#">1900 0019</a></div>
+                    <div>Fax: <a class="foot" href="#">028 4455 662</a></div>
+                </div>
+                <div class="flex more">
+                    <div class="more-img">
+                        <a href="#"><img src="./imgs/google play.png" alt="app store"></a>
+                        <a href="#"><img src="./imgs/app store.png" alt="google play"></a>
+                    </div>
+                    <div class="icon-footer flex">
+                        <a href="https://www.facebook.com/"><span><i class="fa-brands fa-facebook my-element 
+                            " style="color: #366dd3;"></i></span></a>
+                            <a href="https://twitter.com/?lang=en"> <span><i class="fa-brands fa-twitter my-element animate__animated animate__flip"
+                                style="color: #20d6d9;"></i></span></a>
+                            <a href="https://www.tiktok.com/en/"><span><i class="fa-brands fa-tiktok my-element" style="color: #131416;"></i></span></a>
+                            <a href="https://www.instagram.com/"><span><i class="fa-brands fa-square-instagram my-element" style="color: #ea1ace;"></i></span></a>                
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-div-div2">
+                <div class="footer-div-div2-div1">
+                    <hr>
+                </div>
+                <div class="footer-div-div2-div2">&copy; 2023 | Bản quyền thuộc về Công ty Cổ Phần Vé Xe Khách |
+                    www.vexekhach.vn | Chịu trách nhiệm nội dung: Nguyễn Vũ Luân và Đỗ Nhất Duy</div>
+                <div class="footer-div-div2-div3"></div>
+            </div>
+        </div>
+
+        <div class="support flex">
+            <a href="#">1900 0019<i class="fa-solid fa-phone-volume fa-beat-fade icon-left" style="color: #23d138;"></i></a>
+            <a href="https://www.facebook.com/">Facebook <i class="fa-brands fa-facebook fa-beat-fade icon-left" style="color: #3411e4;"></i></i></a>
+            <a href="#">Tư Vấn <i class="fa-solid fa-headset fa-beat-fade icon-left" style="color: #c517e8;"></i></a>
+        </div>
+
+        <a href="#" class="totop">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </footer>
+</body>
+
+</html>

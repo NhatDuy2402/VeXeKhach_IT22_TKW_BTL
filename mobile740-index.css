@@ -1,0 +1,143 @@
+/*header*/
+.more {
+    flex-direction: column;
+}
+
+.more-img{
+    display: flex;
+}
+
+.icon-footer > a{
+    font-size: large;
+}
+/* header*/
+.div-img {
+    display: none;
+}
+
+.selec-header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
+    z-index: 999;
+    left: -100%;
+    /* right: 50%; */
+    text-align: center;
+    background-color: antiquewhite;
+    border-radius: 0 10px 0 0;
+}
+
+.selec-header > li {
+    border-right: none;
+}
+
+
+.show-nav {
+    display: block;
+    top: 40px;
+}
+
+#selec-header li.hide-on-large-screen {
+    display: block;
+  }
+
+  .close {
+    border-radius: 5px;
+  }
+  /*--------------------------------*/
+  .box {
+    white-space: nowrap;
+    width: 97%;
+  }
+
+
+  .boxx-table .start, .end, .date, .tickets {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px; 
+    width: 90px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.boxx-table label {
+    font-size: 14px; 
+}
+
+span.start {
+    display: inline-block;
+    width: 90px;
+    padding: 0;
+}
+
+.dates {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgs > img {
+    height: 70px;
+    width: 30%;
+    margin: 10px 20px 20px 5px;
+}
+
+.Controll > i:first-child {
+    left:6%;
+    top: 10%
+}
+
+.Controll > i:last-child{
+    top: 10%;
+    right: 5%;
+}
+
+.abouts {
+    flex-direction: column;
+}
+
+.img-about{
+    width: 100%;
+ }
+
+ .more-about>h2 {
+    font-size: larger;
+ }
+ 
+ h4{
+    font-size: 20px;
+ }
+
+ .route-name, .route-price {
+    font-size: 22px;
+ }
+
+ .support {
+    bottom: 30px;
+    left: -6%;
+ }
+ .icon-left {
+    font-size: x-large;
+ }
+
+ .support a {
+    padding: 5px; 
+ }
+
+ .Notification{
+    left: 10%;
+    top: 45%;
+ }
+ .login {
+    position: fixed;
+    display: block;
+    left: 10%;
+    padding: 10px;
+    width: 80%;
+    top: 30%;
+ }
+
+ .bg-nav{
+    height: 30px;
+ }

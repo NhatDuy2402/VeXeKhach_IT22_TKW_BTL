@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="imgs/shortcut.png">
+    <link rel="stylesheet" href="./mobile740-index.css" media="screen and (max-width: 740px)" />
+    <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Vé Xe Khách | Đặt Vé Nhanh</title>
+</head>
+
+<body >
+    <header >
+        <section>
+            <div class="flex bg">
+                <div class="flex">
+                    <a href="#">
+                        <div class="mgr">&#9743;19000019</div>
+                    </a>
+                    <a href="#">
+                        <div class="mgl">&#9993;hotro@vexekhach.vn</div>
+                    </a>
+                </div>
+                <div class="signin">
+                    <a class="signin-a" href="#" id="showLogin">
+                        <div>Đăng nhập</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <nav class="bg-nav">
+            <section class="logo">
+                <div class="flex">
+                    <a class="div-img" href=""><img class="img" src="imgs/Vé Xe Khách.png" alt="logo"></a>
+
+                    <nav id="menu">
+                        <ul id="selec-header" class="selec-header">
+                            <li><a href="index.html">TRANG CHỦ</a></li>
+                            <li><a href="#">LỊCH TRÌNH</a></li>
+                            <li><a href="trang3.html">LIÊN HỆ</a></li>
+                            <li><a href="#">HÓA ĐƠN</a></li>
+                            <li>
+                                <a class="visited" href="#">LIÊN KẾT</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://futabus.vn/" target="_blank">FUTABusLines</a></li>
+                                    <li><a href="https://vexere.com/" target="_blank">VeXeRe</a></li>
+                                    <li><a href="https://megabus.vn/" target="_blank">Megabus</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="trang2.html">VỀ CHÚNG TÔI</a></li>
+                            <li class="hide-on-large-screen"><a href="javascrpt:;"><i
+                                        class="fa-solid fa-square-xmark close" style="color: #30c081;"></i></a></li>
+                        </ul>
+                        <a href="javascript:;" class="show-nav"><i class="fa-solid fa-bars"
+                                style="color: #17ccd9;"></i></a>
+                    </nav>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <section>
+                <div>
+                    <div class="box">
+                        <div class="boxx">
+                            <h2 class="boxx-padding20">NHẬP THÔNG TIN</h2>
+                            <div class="boxx-table ">
+                                <div>
+                                    <label>Điểm đi</label>
+                                    <div>
+                                        <span class="start">Hồ Chí Minh</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Điểm đến</label>
+                                    <div>
+                                        <select id="destination" class="end">
+                                            <option value="">Chọn điểm đến</option>
+                                            <option value="ag">An Giang</option>
+                                            <option value="kh">Khánh Hòa</option>
+                                            <option value="nb">Ninh Bình</option>
+                                            <option value="bd">Bình Định</option>
+                                            <option value="qn">Quảng Ngãi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="dates">
+                                    <label>Ngày đi</label>
+                                    <input type="date" class="date" id="date">
+                                </div>
+                                <div>
+                                    <label>Số vé</label>
+                                    <div>
+                                        <select class="tickets" id="tickets" name="tickets" aria-placeholder="aaaaa">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="search">Tìm chuyến xe</button>
+            </section>
+
+            <div class="login" id="popup">
+                <form action="index.html">
+                    <h1>login</h1>
+                    <div class="input">
+                        <i class="fa-solid fa-user line-icon" style="color: #511f1f;"></i>
+                        <input type="text" placeholder="Username"required>
+                       
+                    </div>
+                    <div class="input">
+                        <i class="fa-solid fa-lock line-icon" style="color: #a23510;"></i>
+                        <input type="password" placeholder="password" required maxlength="19">
+                       
+                    </div>
+                    <div class="forget">
+                        <label><input type="checkbox"> remember me</label>
+                        <a href="#">forgot password?</a>
+                    </div>
+                    <button id="Login" type="submit" class="btn">login</button>
+        
+                    <div class="register">
+                        <p>Don't have an account ? <a href="./register.html">register now</a></p>
+                    </div>
+                </form>
+                <p><i id="closePopup" class="fa-solid fa-square-xmark close-login"></i></p>
+            </div>
+
+            
+
+            <div class="Notification" id="notification">
+                <p><i class="fa-regular fa-rectangle-xmark close2" style="color: #fb5d41;"></i></p>
+                <p><i class="fa-solid fa-triangle-exclamation fa-bounce" style="color: #ffae00;"></i>Tuyến Đường hiện không hỗ trợ<i class="fa-solid fa-triangle-exclamation fa-bounce" style="color: #ffae00;"></i></p>
+            </div>
+
+            <div id="slide" class="reveal">
+                <h2><i class="fa-solid fa-fire-flame-curved fa-shake"></i> ƯU ĐÃI HOT <i
+                        class="fa-solid fa-fire-flame-curved fa-shake"></i></h2>
+                <div class="imgs flex">
+                    <img class="img-location" src="./imgs/endow1.jpg" alt="img1">
+                    <img class="img-location" src="./imgs/endow2.png" alt="img2">
+                    <img class="img-location" src="./imgs/endow3.jpg" alt="img3">
+                </div>
+                <div class="Controll">
+                    <i class="fa-solid fa-chevron-left" onclick="prev()"></i>
+                    <i class="fa-solid fa-chevron-right" onclick="next()"></i>
+                </div>
+            </div>
+
+            <div id="slide2" class="reveal" >
+                <div class="text-slice2">
+                    <h2> Tuyến Đường Phổ Biến </h2>
+                    <p>được khách hàng tin đưởng và lựa chọn</p>
+                </div>
+                <div class="slide-container">
+                    <div class="routes flex">
+                        <div class="route">
+                            <a href="trang1.html">
+                                <div><img class="img-route  fixed-size-img" src="./imgs/ND1.jpg" alt="img 4"></div>
+                                <div class="route-name">Sài Gòn - Đà Nẵng </div>
+                                <div class="route-price">Từ 400.000đ</div>
+                            </a>
+                        </div>
+
+                        <div class="route">
+                            <a href="trang1.html">
+                                <div><img class="img-route  fixed-size-img" src="./imgs/ND2.jpg" alt="img 5"></div>
+                                <div class="route-name">Sài Gòn - Tiền Giang </div>
+                                <div class="route-price">Từ 100.000đ</div>
+                            </a>
+                        </div>
+
+                        <div class="route">
+                            <a href="trang1.html">
+                                <div><img class="img-route  fixed-size-img" src="./imgs/ND3.jpg" alt="img 6"></div>
+                                <div class="route-name">Sài Gòn - Vĩnh Long </div>
+                                <div class="route-price">Từ 300.000đ</div>
+                            </a>
+                        </div>
+
+                        <div class="route">
+                            <a href="trang1.html">
+                                <div><img class="img-route  fixed-size-img" src="./imgs/ND4.jpg" alt="img 7"></div>
+                                <div class="route-name">Sài Gòn - Đồng Tháp </div>
+                                <div class="route-price">Từ 350.000đ</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Controll2">
+                    <i class="fa-solid fa-circle-chevron-left fa-fade fa-sm" style="color: #db0ab5;"
+                        onclick="prev2()"></i>
+                    <i class="fa-solid fa-circle-chevron-right fa-fade fa-sm" style="color: #db0ab5;"
+                        onclick="next2()"></i>
+                </div>
+            </div>
+
+            <div class="more-about reveal">
+                <h2>BUS GROUP - CHẤT LƯỢNG LÀ DANH DỰ</h2>
+                <P>Được Khách Hàng Tin Tưởng và Lựa Chọn</P>
+                <div class="flex abouts">
+                    <div class="about">
+                        <ul class="flex about1">
+                            <li><img src="./imgs/about1.svg" alt="about1"></li>
+                            <li>
+                                <h4>Hơn 400 triệu lượt khách</h4>
+                            </li>
+                        </ul>
+                        <ul class="flex about2">
+                            <li><img src="./imgs/about2.svg" alt="about2"></li>
+                            <li>
+                                <h4>Hơn 500 Phòng vé - Bưu Cục</h4>
+                            </li>
+                        </ul>
+                        <ul class="flex about3">
+                            <li><img src="./imgs/about3.svg" alt="about3"></li>
+                            <li>
+                                <h4>Hơn 3000 Chuyến Xe</h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><img class="img-about" src="./imgs/about.svg" alt="about"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-hr">
+            <hr>
+        </div>
+
+        <div class="footer-div">
+            <div class="footer-div-div1">
+                <h3>TỔNG ĐÀI ĐẶT VÉ VÀ CSKH</h3>
+                <h1><a class="foot" href="#">1900 0019</a></h1>
+                <p>CÔNG TY CỔ PHẦN VÉ XE KHÁCH</p>
+                <p>Địa chỉ: Số 371 Nguyễn Kiệm, Phường 3, Quận Gò Vấp, Thành Phố Hồ Chí Minh, Việt Nam</a></p>
+                <p>Email: <a class="foot" href="#">hotro@vexekhach.vn</a></p>
+                <div class="flex space">
+                    <div class="phone">Điện thoại: <a class="foot" href="#">1900 0019</a></div>
+                    <div>Fax: <a class="foot" href="#">028 4455 662</a></div>
+                </div>
+                <div class="flex more">
+                    <div class="more-img">
+                        <a href="#"><img src="./imgs/google play.png" alt="app store"></a>
+                        <a href="#"><img src="./imgs/app store.png" alt="google play"></a>
+                    </div>
+                    <div class="icon-footer flex">
+                        <a href="https://www.facebook.com/"><span><i class="fa-brands fa-facebook my-element hover-animate" style="color: #366dd3;"></i></span></a>
+                        <a href="https://twitter.com/?lang=en"> <span><i class="fa-brands fa-twitter my-element hover-animate" style="color: #20d6d9;"></i></span></a>
+                        <a href="https://www.tiktok.com/en/"><span><i class="fa-brands fa-tiktok my-element hover-animate" style="color: #131416;"></i></span></a>
+                        <a href="https://www.instagram.com/"><span><i class="fa-brands fa-square-instagram my-element hover-animate" style="color: #ea1ace;"></i></span></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-div-div2">
+                <div class="footer-div-div2-div1">
+                    <hr>
+                </div>
+                <div class="footer-div-div2-div2">&copy; 2023 | Bản quyền thuộc về Công ty Cổ Phần Vé Xe Khách |
+                    www.vexekhach.vn | Chịu trách nhiệm nội dung: Nguyễn Vũ Luân và Đỗ Nhất Duy</div>
+                <div class="footer-div-div2-div3"></div>
+            </div>
+        </div>
+
+        <div class="support flex">
+            <a href="#">1900 0019<i class="fa-solid fa-phone-volume fa-beat-fade icon-left" style="color: #23d138;"></i></a>
+            <a href="https://www.facebook.com/">Facebook <i class="fa-brands fa-facebook fa-beat-fade icon-left" style="color: #3411e4;"></i></i></a>
+            <a href="#">Tư Vấn <i class="fa-solid fa-headset fa-beat-fade icon-left" style="color: #c517e8;"></i></a>
+        </div>
+
+        <a href="#" class="totop">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+        <script src="index.js"></script>
+    </footer>
+</body>
+
+</html>

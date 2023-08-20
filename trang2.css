@@ -1,0 +1,384 @@
+/*---------------------VU LUAN -----------------*/
+*{
+   font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+.margin-header {
+   margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: rgb(238, 236, 232);
+}
+
+footer, footer * {
+   margin: auto;
+   padding: 0;
+}
+header, header * {
+   margin: auto;
+   padding: 0;
+}
+
+body {
+   margin: 0;
+   width: 100%;
+   padding: 0;
+   background-color: rgb(238, 230, 214);
+}
+
+/*------------------------------------------*/
+.flex{
+   display: flex;
+}
+.bg{
+   background-color: mediumturquoise;
+   min-height: 35px;
+   width: 100%;
+}
+.mgr{
+   margin-right: 0.5rem;
+   color: white;
+}
+.mgl{
+   margin-left: 0.5rem;
+   color: white;
+}
+.signin{
+   background-color: red;
+   border-radius: 5px;
+   padding: 5px;
+   min-width: 120px;
+   text-align: center;
+   text-transform: uppercase;
+}
+.signin:hover{
+  background-color: #19d259;
+}
+.signin-a, .flex>a{
+  color: white;
+  text-decoration: none;
+}
+.foot{
+   text-decoration: none;
+   color:darkturquoise;
+}
+.logo{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 70%;
+}
+.div-img{
+  width: 100px;
+}
+.img{
+  width: 100%;
+  border-radius: 15px;
+}
+#menu ul{
+  list-style-type: none;
+  text-align: center;
+}
+#menu ul li {
+  display: inline-table;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+}
+#menu ul li a {
+  text-decoration: none;
+  display: block;
+  color: #eb5757;
+  border-radius: 10px;
+  font-size: large;
+  white-space: nowrap;
+}
+#menu ul li a:hover {
+  background-color: #19d259;
+  color: #fb6400;
+}
+#menu ul li > .sub-menu {
+  display: none;
+  position: absolute;
+  background-color: mediumturquoise;
+  z-index: 9999;
+}
+#menu ul li:hover .sub-menu {
+  display: block;
+  border-radius: 10px;
+}
+
+.footer-hr{
+   padding-bottom: 15px;
+   width: 100%;
+}
+.footer-div{
+   width: 80%;
+}
+.footer-div-div1{
+   padding-bottom: 15px ;
+   width: 80%;
+}
+.footer-div-div1>h3, .footer-div-div1>h1, .footer-div-div1>p {
+   padding-bottom: 10px;
+   transform: scale(1);
+}
+
+.footer-div-div1>h3:hover, .footer-div-div1>h1:hover, .footer-div-div1>p:hover, .space > div:hover {
+   transform: scale(1.2);
+   color: #fb6400;
+} 
+
+.footer-div-div2{
+   width: 85%;
+   text-align: center;
+}
+.footer-div-div2-div1,  .footer-div-div2-div3{
+   padding-bottom: 15px;
+}
+.footer-div-div2-div2{
+  background-color: orange;
+   font-size: small;
+   border-radius:10px;
+}
+.phone{
+  margin: 0;
+}
+footer{
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(130, 253, 255, 0.916)),url(imgs/background.jpg);
+}
+.totop {
+  background-color: #fb6400;
+  color: white;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+.totop.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* ---------------------NHAT DUY----------------- */
+/*header*/
+.show-nav {
+   display: none;
+   /* background-color: slategray;
+   padding: 10px; */
+   width: 1rem;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 2px;
+   position: absolute;
+   top: 35%;
+   left: 5px;
+   transition: left 1s;
+   font-size: x-large;
+}
+
+.close {
+   font-size: xx-large;
+}
+
+#selec-header li.hide-on-large-screen {
+   display: none;
+}
+
+.bg-nav {
+   width: 100%;
+   height: 150px;
+   background-image: url('./imgs/bus8.jpg');
+   background-size: cover;
+   background-position: center;
+}
+ /*------------------------------------------------*/
+ /*icon fixed*/
+.support {
+   position: fixed;
+   left: -3%;
+   bottom: 20px;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 999;
+  transform: translate(-150px, 0);
+}
+
+.support a {
+   color: #1d1c1c;
+   background: rgb(206, 204, 199);
+   font-size: 20px;
+   text-decoration: none;
+   display: block;
+   margin: 3px;
+   padding: 12px;
+   width: 200px;
+   text-align: left;
+   border-radius: 50px;
+   transition: 1s;
+   text-align: end;
+}
+
+.support a:hover {
+   transform: translate(100px, 0);
+}
+
+
+.icon-left {
+   font-size: x-large;
+}
+/*--------------------------------------------*/
+ /*------------------------------------------------*/
+main {
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   
+}
+
+.center {
+   text-align: justify;
+}
+
+
+.paragraph-title {
+   color: #fb6400;
+   text-align: center;
+   transform:scale(1);
+   transition: all 0.5s ease;
+} 
+
+.paragraph-title:hover {
+   transform:scale(1.2);
+   transition: all 0.5s ease;
+   text-decoration: underline;
+}
+.introduce {
+   margin: 0 10%;
+
+}
+
+span {
+   font-weight: bolder;
+   font-style: oblique;
+}
+
+
+.paragraph{
+   width: 100%;
+   margin: 50px 0;
+   padding: 0;
+   justify-content: space-evenly;
+
+}
+
+
+.par{
+   width: 500px;
+   text-align: justify;
+}
+
+.img-paragraph{
+   width: 500px;
+   height: 300px;
+   border-radius: 8px;
+  margin-top: 40px;
+  transform: scale(1);
+  transition: transform 0.5s ease; 
+}
+
+.img-paragraph:hover{
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
+.hidden {
+   display: none;
+}
+
+.more-infomation {
+   color: #708cbd;
+   margin: 0 auto;
+   padding: 0;
+   width: 10%;
+}
+
+.more-infomation:hover {
+   font-weight: bolder;
+   transform: scale(1.2);
+   color: #fb6400;
+}
+
+.more-img a > img {
+   width: 130px;
+   margin-top: 5px;
+}
+
+.icon-footer {
+    display: inline-flex;
+}
+
+.icon-footer > a {
+    margin: 0 15px; 
+    font-size: xx-large;
+}
+
+.icon-footer .my-element {
+    position: relative;
+    display: contents;
+}
+.icon-footer a span {
+    margin: 0;
+}
+
+/*cuộn hiện từ từ*/
+.reveal {
+   position: relative;
+   transform: translateY(80px);
+   opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+   transform: translateY(0px);
+   opacity: 1;
+} 
+
+/*cố định header*/
+header {
+   position: fixed;
+   box-sizing: border-box;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 999;
+   border-bottom: 1px solid #f5f5f5;
+
+}
+
+main {
+   padding-top: 10%;
+}
+
+.bg-nav {
+   height: 80px;
+}
+
+.img{
+   height: 50px;
+   width: 60px;
+}
