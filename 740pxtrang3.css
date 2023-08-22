@@ -1,0 +1,84 @@
+.flex {
+    flex-direction: column;
+}
+.width-1, .width-2 {
+    width: 100%;
+}
+.width-1 {
+    order: 1;
+}
+.width-2 {
+    order: 2;
+}
+
+ /* icon fixed góc trái*/
+ .support {
+    bottom: 30px;
+    left: -7%;
+ }
+ .icon-left {
+    font-size: x-large;
+ }
+
+ .support a {
+    padding: 5px;
+   
+ }
+
+.more-img{
+    display: flex;
+}
+
+.icon-footer
+{
+    display: none;
+}
+.icon-footer > a{
+    font-size: large;
+}
+
+/*----------------------*/
+
+/*icon fixed*/
+.support {
+    position: fixed;
+    left: -3%;
+    bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 999;
+    transform: translate(-150px, 0);
+}
+
+.support a {
+    color: #1d1c1c;
+    background: rgb(206, 204, 199);
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    margin: 3px;
+    padding: 12px;
+    width: 200px;
+    text-align: left;
+    border-radius: 50px;
+    transition: 1s;
+    text-align: end;
+}
+
+.support a:hover {
+    transform: translate(100px, 0);
+}
+
+
+.icon-left {
+    font-size: x-large;
+}
+
+
+.form {
+    width: 20%;
+}
+
+.form-1-1, .form-1-2, .form-2-2, .form-2-1 {
+    width: 70px;
+}
