@@ -635,6 +635,7 @@ footer {
 
 .route { 
    overflow: hidden; 
+   position: relative;
 }
 
 .route:hover {
