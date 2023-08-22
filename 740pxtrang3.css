@@ -1,84 +1,98 @@
-.flex {
-    flex-direction: column;
-}
-.width-1, .width-2 {
+body{
     width: 100%;
 }
-.width-1 {
-    order: 1;
-}
-.width-2 {
-    order: 2;
-}
 
- /* icon fixed góc trái*/
- .support {
-    bottom: 30px;
-    left: -7%;
- }
- .icon-left {
-    font-size: x-large;
- }
-
- .support a {
-    padding: 5px;
-   
- }
+.more {
+    flex-direction: column;
+}
 
 .more-img{
     display: flex;
 }
 
-.icon-footer
-{
-    display: none;
-}
 .icon-footer > a{
     font-size: large;
 }
 
-/*----------------------*/
+.div-img {
+    display: none;
+}
 
-/*icon fixed*/
-.support {
-    position: fixed;
-    left: -3%;
-    bottom: 20px;
+.selec-header {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
     z-index: 999;
-    transform: translate(-150px, 0);
+    left: -100%;
+    /* right: 50%; */
+    text-align: center;
+    background-color: antiquewhite;
+    border-radius: 0 10px 0 0;
 }
 
-.support a {
-    color: #1d1c1c;
-    background: rgb(206, 204, 199);
-    font-size: 20px;
-    text-decoration: none;
+.selec-header > li {
+    border-right: none;
+}
+
+
+.show-nav {
     display: block;
-    margin: 3px;
-    padding: 12px;
-    width: 200px;
-    text-align: left;
-    border-radius: 50px;
-    transition: 1s;
-    text-align: end;
 }
 
-.support a:hover {
-    transform: translate(100px, 0);
-}
+#selec-header li.hide-on-large-screen {
+    display: block;
+  }
 
-
-.icon-left {
-    font-size: x-large;
-}
-
+  .close {
+    border-radius: 5px;
+  }
+/*----------------*/
 
 .form {
-    width: 20%;
+    position: relative;
+    overflow: hidden;
 }
 
-.form-1-1, .form-1-2, .form-2-2, .form-2-1 {
-    width: 70px;
+body{
+    width: 100%;
+}
+
+.send {
+    left:55px;
+    top: 10px;
+}
+
+.infomation-left {
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+}
+.form {
+    height: 70%;
+    margin-top: 90px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.form-1-1, .form-1-2, .form-2-1, .form-2-2{
+    width: 100px;
+}
+
+.form-3-2{
+    width: 90%;
+    text-align: center;
+    left: 10px;
+}
+
+.form-3-1{
+    width: 90%;
+    left: 10px;
+}
+
+.message{
+    flex-direction: column;
+    display: flex;
 }
