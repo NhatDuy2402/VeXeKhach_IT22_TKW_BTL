@@ -681,7 +681,7 @@ footer {
     height: auto;
     transition: transform 0.5s;
     transform: scale(1); 
-    margin: 0;
+    margin: 20px auto;
 }
 
 .route:hover .img-route {
