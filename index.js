@@ -9,24 +9,22 @@ window.addEventListener("scroll", () => {
     }
 })
 
+//Doc file json tuyen duong pho bien
 function loadIndex() {
-    fetch("data/index.json").then(res => res.json()).then(data => {
-        let d = document.getElementById("route");
+    fetch("index.json").then(res => res.json()).then(data => {
+        let d = document.getElementById("routes");
         let re = "";
         for (let c of data)
-            re += `<div class="name-route">${c.name}</div>
-        <div class="flex  border">
-            <img class="item" src="imgs/Vé Xe Khách.png" alt="An Giang">
-            <div>
-                <div class="info">Thời Gian dự kiến: ${c.time}. </div>
-                <div class="info">Khoảng cách: ${c.distance}.</div>
-                <button class="oder">Tiến hành đặt vé</button>
-            </div>
+            re += `<div class="route">
+            <a href="trang1.html">
+                <div><img class="img-route  fixed-size-img" src="./imgs/ND1.jpg" alt="img 4"></div>
+                <div class="route-name">Sài Gòn - Đà Nẵng </div>
+                <div class="route-price">Từ 400.000đ</div>
+            </a>
         </div>`
         d.innerHTML += re;
     })
 }
-
 window.onload = () => {
     loadIndex();
 }

@@ -1,0 +1,50 @@
+[{
+    "img": "imgs/ND2",
+    "route": "Sài Gòn - Tiền Giang",
+    "price": "Từ 100"
+},{
+    "img": "imgs/ND3",
+    "route": "Sài Gòn - Vĩnh Long",
+    "price": "Từ 300"
+},{
+    "img": "imgs/ND4",
+    "route": "Sài Gòn - Đồng Tháp",
+    "price": "Từ 350"
+},{
+    "img": "imgs/ND6",
+    "route": "Sài Gòn - Sóc Trăng",
+    "price": "Từ 340"
+},{
+    "img": "imgs/ND7",
+    "route": "Sài Gòn - Phú Quốc",
+    "price": "Từ 470"
+},{
+    "img": "imgs/ND8",
+    "route": "Sài Gòn - Long An",
+    "price": "Từ 120"
+},{
+    "img": "imgs/ND9",
+    "route": "Sài Gòn - Bạc Liêu",
+    "price": "Từ 330"
+},{
+    "img": "imgs/ND10",
+    "route": "Sài Gòn - Bến Tre",
+    "price": "Từ 150"
+},{
+    "img": "imgs/ND11",
+    "route": "Sài Gòn - Cà Mau",
+    "price": "Từ 350"
+},{
+    "img": "imgs/ND12",
+    "route": "Sài Gòn - Hậu Giang",
+    "price": "Từ 180"
+},{
+    "img": "imgs/ND13",
+    "route": "Sài Gòn - An Giang",
+    "price": "Từ 280"
+},{
+    "img": "imgs/ND14",
+    "route": "Sài Gòn - Trà Vinh",
+    "price": "Từ 170"
+}
+]
