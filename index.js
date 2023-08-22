@@ -97,7 +97,7 @@ setInterval(next, 5000); // tự dộng chuyển hình sau 5s
         "./imgs/ND12.png",
         "./imgs/ND13.jpg",
         "./imgs/ND14.jpg",
-        "./imgs/ND16.jpg",
+      
     ];
 
     var arr_place = [
