@@ -48,7 +48,7 @@ window.onload = () => {
 
 }
 
-/*hàm chuyển ảnh qua lại các địa điểm*/
+/*hàm chuyển ảnh qua lại quảng cáo*/
 {
     var arr_hinh = [
         "./imgs/endow1.jpg",
@@ -74,14 +74,14 @@ function prev() {
 function updateImages() {
     var hinhElements = document.getElementsByClassName("img-location");
     for (var i = 0; i < 3; i++) {
-        var imgIndex = (index + i) % arr_hinh.length;
-        hinhElements[i].src = arr_hinh[imgIndex];
+        var d = (index + i) % arr_hinh.length;
+        hinhElements[i].src = arr_hinh[d];
     }
 }
 
 setInterval(next, 5000); // tự dộng chuyển hình sau 5s
 }
-/* js cho phần tuyến đường phổ biến */
+/* Hàm chuyển qua lại các tuyến đường phổ biến */
 {
     var arr_hinh2 = [
         "./imgs/ND1.jpg",
@@ -144,23 +144,23 @@ setInterval(next, 5000); // tự dộng chuyển hình sau 5s
     }
     
     function updateImages() {
-        var routeElements = document.querySelectorAll(".route");
+        var route = document.querySelectorAll(".route");
     
-        for (var i = 0; i < routeElements.length; i++) {
-            var imgIndex = (index + i) % arr_hinh2.length;
-            var imgElement = routeElements[i].querySelector(".img-route");
-            imgElement.src = arr_hinh2[imgIndex];
+        for (var i = 0; i < route.length; i++) {
+            var d = (index + i) % arr_hinh2.length;
+            var e = route[i].querySelector(".img-route");
+            e.src = arr_hinh2[d];
     
-            var routeName = routeElements[i].querySelector(".route-name");
-            var routePrice = routeElements[i].querySelector(".route-price");
+            var name = route[i].querySelector(".route-name");
+            var p = route[i].querySelector(".route-price");
     
             // Update route information as needed
-            if (imgIndex === 3) {
-                routeName.textContent = "Sài Gòn - Đồng Tháp";
-                routePrice.textContent = "Từ 350.000đ";
+            if (d === 3) {
+                name.textContent = "Sài Gòn - Đồng Tháp";
+                p.textContent = "Từ 350.000đ";
             } else {
-                routeName.textContent = `Sài Gòn - ${arr_place[imgIndex]}`;
-                routePrice.textContent = `Từ ${arr_money[imgIndex]}đ`;   
+                name.textContent = `Sài Gòn - ${arr_place[d]}`;
+                p.textContent = `Từ ${arr_money[d]}đ`;   
             }
                       
         }
@@ -173,33 +173,33 @@ function isMobile() {
 
 // Hàm cập nhật hình ảnh theo số lượng mong muốn (2 hoặc 4)
 function updateImagesByCount(count) {
-    var routeElements = document.querySelectorAll(".route");
+    var route = document.querySelectorAll(".route");
 
-    for (var i = 0; i < routeElements.length; i++) {
-        var imgIndex = (index + i) % arr_hinh2.length;
-        var imgElement = routeElements[i].querySelector(".img-route");
-        imgElement.src = arr_hinh2[imgIndex];
+    for (var i = 0; i < route.length; i++) {
+        var d = (index + i) % arr_hinh2.length;
+        var e = route[i].querySelector(".img-route");
+        e.src = arr_hinh2[d];
 
-        var routeName = routeElements[i].querySelector(".route-name");
-        var routePrice = routeElements[i].querySelector(".route-price");
+        var name = route[i].querySelector(".route-name");
+        var p = route[i].querySelector(".route-price");
 
-        if (imgIndex === 3) {
-            routeName.textContent = "Sài Gòn - Đồng Tháp";
-            routePrice.textContent = "Từ 350.000đ";
+        if (d === 3) {
+            name.textContent = "Sài Gòn - Đồng Tháp";
+            p.textContent = "Từ 350.000đ";
         } else {
-            routeName.textContent = `Sài Gòn - ${arr_place[imgIndex]}`;
-            routePrice.textContent = `Từ ${arr_money[imgIndex]}đ`;   
+            name.textContent = `Sài Gòn - ${arr_place[d]}`;
+            p.textContent = `Từ ${arr_money[d]}đ`;   
         }
 
         // Ẩn hoặc hiển thị hình ảnh tùy theo số lượng mong muốn
         if (i >= count) {
-            imgElement.style.display = "none";
-            routeName.style.display = "none";
-            routePrice.style.display = "none";
+            e.style.display = "none";
+            name.style.display = "none";
+            p.style.display = "none";
         } else {
-            imgElement.style.display = "block";
-            routeName.style.display = "block";
-            routePrice.style.display = "block";
+            e.style.display = "block";
+            name.style.display = "block";
+            p.style.display = "block";
         }
     }
 }
@@ -220,14 +220,14 @@ window.addEventListener("resize", function() {
     }
 });
 }
-/*chuyển trang khi nhấn button*/
+/*chuyển trang khi nhấn nút tìm kiếm*/
 {
     document.addEventListener("DOMContentLoaded", function () {
-        var searchButton = document.querySelector(".search");
-        var des = document.getElementById("destination");
+        var s = document.querySelector(".search");
+        var d = document.getElementById("destination");
     
-        searchButton.addEventListener("click", function () {
-            var selec = des.value;
+        s.addEventListener("click", function () {
+            var selec = d.value;
             if (selec === "ag") {
                 window.location.href = "trang1.html";
             } else {
@@ -238,20 +238,21 @@ window.addEventListener("resize", function() {
     });
 }
 
+// hiện biểu tượng tuyến đường không hỗ trợ
 {
      // Lấy phần tử biểu tượng "close"
-    const closeIcon = document.querySelector('.close2');
+    const close = document.querySelector('.close2');
 
      // Lấy phần tử thông báo
-    const notification = document.getElementById('notification');
+    const tb = document.getElementById('notification');
 
     // Hàm để ẩn thông báo
     function hideNotification() {
-        notification.style.display = 'none';
+        tb.style.display = 'none';
     }
 
       // Gắn sự kiện nhấp chuột vào biểu tượng "close"
-    closeIcon.addEventListener('click', hideNotification);
+    close.addEventListener('click', hideNotification);
 
 }
 /*hiệu ứng hiện dần dần khi cuộn*/
@@ -263,11 +264,11 @@ function reveal() {
 
     for(var i =0; i< reveals.length;i++)
     {
-        var windowheight = window.innerHeight;
-        var revealtop = reveals[i].getBoundingClientRect().top; //thông tin kích thước 1 phần tử
-        var revealpoint = 120;
+        var c1 = window.innerHeight;
+        var c2 = reveals[i].getBoundingClientRect().top; //thông tin kích thước 1 phần tử
+        var c3 = 120;
 
-        if(revealtop < windowheight - revealpoint) { //vị trí của phần tử so với viewport nhỏ hơn 120 thì thêm class active
+        if(c2 < c1 - c3) { //vị trí của phần tử so với viewport nhỏ hơn 120 thì thêm class active
             reveals[i].classList.add('active');
         }
         else {
@@ -277,16 +278,17 @@ function reveal() {
 }
 }
 
+// hiện và ẩn cửa sổ đăng nhập 
 document.addEventListener('DOMContentLoaded', function () {
-    const showLoginButton = document.getElementById("showLogin");
+    const show = document.getElementById("showLogin");
     const popup = document.getElementById("popup");
-    const closePopup = document.getElementById("closePopup");
+    const close = document.getElementById("closePopup");
 
-    showLoginButton.addEventListener("click", function () {
+    show.addEventListener("click", function () {
         popup.style.display = "block";
     });
 
-    closePopup.addEventListener("click", function () {
+    close.addEventListener("click", function () {
         popup.style.display = "none";
     });
 });
