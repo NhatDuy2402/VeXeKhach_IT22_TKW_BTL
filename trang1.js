@@ -6,17 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
   //----------------------------------------------------
   // 1. Hàm chuyển đổi thông tin và điểm đón xe
   {
-    // Lắng nghe sự kiện click cho các tab
     $('.tab-switch li').click(function () {
-      // Lấy data-tab attribute của tab được click
       var a = $(this).attr('data-tab');
-      // Xóa active class khỏi tất cả các tab
       $('.tab-switch li').removeClass('active');
-      // Ẩn tất cả các tab pane
       $('.tab-pane').removeClass('active');
-      // Thêm active class vào tab được click
       $(this).addClass('active');
-      // Hiển thị tab pane tương ứng với tab được click
       $("#" + a).addClass('active');
     });
   }
@@ -29,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { countdownElement: document.querySelector('.reverse-time3'), countDownTime: 3600000 },
       { countdownElement: document.querySelector('.reverse-time4'), countDownTime: 10800000 },
       { countdownElement: document.querySelector('.reverse-time5'), countDownTime: 8280000 },
-      // Thêm thông tin về các xe khác tại đây
+     
     ];
 
     function update(car) {
@@ -88,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         chooseBtnClass: 'choose-seat-btn',
         closeBtnId: 'hide-section-btn5',
       },
-      // Thêm thông tin về các xe khác
+     
     ];
 
     function setupAndClose(car) {
@@ -123,10 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
   //4.  Hàm tô màu để đặt chỗ
   {
     function color(carId) {
-      // Lấy tất cả các phần tử ghế có lớp color-seat của xe cụ thể
+    
       const c = document.querySelectorAll(`#${carId} .color-seat`);
 
-      // Hàm cập nhật màu của ghế khi được click
+      
       function color2(seatElement) {
         if (seatElement.classList.contains('selected-seat')) {
           seatElement.style.color = '#ebe6e6';
@@ -137,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
 
-      // Lắng nghe sự kiện click trên từng phần tử ghế
+      
       c.forEach(function (seatElement) {
         seatElement.addEventListener('click', function () {
           color2(seatElement);
@@ -157,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       c.forEach(seat => {
         seat.addEventListener('click', function () {
-          // Kiểm tra nếu biểu tượng không có class no-select
+
           if (!seat.classList.contains('no-select')) {
             const d = seat.dataset.name;
 
@@ -224,9 +218,8 @@ document.addEventListener('DOMContentLoaded', function () {
       index = (index + 1) % images.length;
     }
 
-    setInterval(change, 3000); // Thay đổi hình ảnh mỗi 3 giây
+    setInterval(change, 3000); 
 
-    // Đảm bảo rằng chữ không bị nhảy vào thay thế
     l.addEventListener('load', function () {
       r.src = images[index];
     });
@@ -290,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (var i = 0; i < reveals.length; i++) {
       var c1 = window.innerHeight;
-      var c2 = reveals[i].getBoundingClientRect().top; //thông tin kích thước 1 phần tử
+      var c2 = reveals[i].getBoundingClientRect().top; 
       var c3 = 120;
 
       if (c2 < c1 - c3) { 

@@ -20,10 +20,9 @@
 
         for (var i = 0; i < reveals.length; i++) {
             var c1 = window.innerHeight;
-            var c2 = reveals[i].getBoundingClientRect().top; //thông tin kích thước 1 phần tử
+            var c2 = reveals[i].getBoundingClientRect().top; 
             var c3 = 120;
-
-            if (c2 < c1 - c3) { //vị trí của phần tử so với viewport nhỏ hơn 120 thì thêm class active
+            if (c2 < c1 - c3) {
                 reveals[i].classList.add('active');
             }
             else {
@@ -33,7 +32,7 @@
     }
 }
 
-//Doc file json tuyen duong pho bien
+// chuyển qua lại tuyến đường phổ biến
 {
     function loadIndex() {
         fetch("index.json").then(res => res.json()).then(data => {
@@ -180,8 +179,6 @@
 
             var name = route[i].querySelector(".route-name");
             var p = route[i].querySelector(".route-price");
-
-            // Update route information as needed
             if (d === 3) {
                 name.textContent = "Sài Gòn - Đồng Tháp";
                 p.textContent = "Từ 350.000đ";
@@ -246,7 +243,7 @@
         }
     });
 }
-/*chuyển trang khi nhấn nút tìm kiếm*/
+/*chuyển trang khi nhấn nút tìm kiếm bảng thông báo tuyến đường chưa hỗ trợ*/
 {
     document.addEventListener("DOMContentLoaded", function () {
         var s = document.querySelector(".search");
@@ -257,7 +254,6 @@
             if (selec === "ag") {
                 window.location.href = "trang1.html";
             } else {
-                // Hiển thị bảng thông báo cho các điểm đến chưa hỗ trợ
                 notification.style.display = "block";
             }
         });
@@ -266,18 +262,11 @@
 
 // hiện biểu tượng tuyến đường không hỗ trợ
 {
-    // Lấy phần tử biểu tượng "close"
     const close = document.querySelector('.close2');
-
-    // Lấy phần tử thông báo
     const tb = document.getElementById('notification');
-
-    // Hàm để ẩn thông báo
     function hidden() {
         tb.style.display = 'none';
     }
-
-    // Gắn sự kiện nhấp chuột vào biểu tượng "close"
     close.addEventListener('click', hidden);
 
 }

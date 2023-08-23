@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 p.classList.remove('hidden');
             });
 
-            // Ẩn phần "Xem Thêm" sau khi được nhấn
             this.style.display = 'none';
         });
     }
@@ -73,10 +72,10 @@ window.onload = function () {
 
         for (var i = 0; i < reveals.length; i++) {
             var c1 = window.innerHeight;
-            var c2 = reveals[i].getBoundingClientRect().top; //thông tin kích thước 1 phần tử
+            var c2 = reveals[i].getBoundingClientRect().top; 
             var c3 = 120;
 
-            if (c2 < c1 - c3) { //vị trí của phần tử so với viewport nhỏ hơn 120 thì thêm class active
+            if (c2 < c1 - c3) { 
                 reveals[i].classList.add('active');
             }
             else {
