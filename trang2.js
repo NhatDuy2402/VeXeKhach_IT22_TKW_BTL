@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     {
         document.getElementById('showMore').addEventListener('click', function () {
             var hidden = document.querySelectorAll('.hidden');
-            hidden.forEach(function (paragraph) {
-                paragraph.classList.remove('hidden');
+            hidden.forEach(function (p) {
+                p.classList.remove('hidden');
             });
 
             // Ẩn phần "Xem Thêm" sau khi được nhấn

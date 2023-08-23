@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Thêm thông tin về các xe khác tại đây
     ];
 
-    function updateCountdown(car) {
+    function update(car) {
       var s = car.countDownTime / 1000;
       s = Math.floor(s);
       var h = Math.floor(s / 3600);
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     for (var i = 0; i < cars.length; i++) {
-      cars[i].t = setInterval(updateCountdown.bind(null, cars[i]), 1000);
+      cars[i].t = setInterval(update.bind(null, cars[i]), 1000);
     };
   }
   //----------------------------------------------------
@@ -219,12 +219,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const l = document.getElementById("image1");
     const r = document.getElementById("image2");
 
-    function changeImage() {
+    function change() {
       l.src = images[index];
       index = (index + 1) % images.length;
     }
 
-    setInterval(changeImage, 3000); // Thay đổi hình ảnh mỗi 3 giây
+    setInterval(change, 3000); // Thay đổi hình ảnh mỗi 3 giây
 
     // Đảm bảo rằng chữ không bị nhảy vào thay thế
     l.addEventListener('load', function () {
