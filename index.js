@@ -1,4 +1,4 @@
-// hàm đi lên đầu trang
+//1. hàm đi lên đầu trang
 {
     const toTop = document.querySelector(" .totop");
 
@@ -11,7 +11,7 @@
     })
 }
 
-/*hiệu ứng hiện dần dần khi cuộn*/
+/*2. hiệu ứng hiện dần dần khi cuộn*/
 {
     window.addEventListener('scroll', reveal);
 
@@ -20,7 +20,7 @@
 
         for (var i = 0; i < reveals.length; i++) {
             var c1 = window.innerHeight;
-            var c2 = reveals[i].getBoundingClientRect().top; 
+            var c2 = reveals[i].getBoundingClientRect().top;
             var c3 = 120;
             if (c2 < c1 - c3) {
                 reveals[i].classList.add('active');
@@ -32,7 +32,7 @@
     }
 }
 
-// chuyển qua lại tuyến đường phổ biến
+//3. chuyển qua lại tuyến đường phổ biến
 {
     function loadIndex() {
         fetch("index.json").then(res => res.json()).then(data => {
@@ -54,7 +54,7 @@
     }
 }
 
-/*hàm ân ẩn hiện menu của header*/
+/*hàm ân ẩn hiện menu của header reponsive*/
 {
     window.onload = function () {
         let m = document.getElementById("selec-header");
@@ -179,69 +179,11 @@
 
             var name = route[i].querySelector(".route-name");
             var p = route[i].querySelector(".route-price");
-            if (d === 3) {
-                name.textContent = "Sài Gòn - Đồng Tháp";
-                p.textContent = "Từ 350.000đ";
-            } else {
-                name.textContent = `Sài Gòn - ${arr_place[d]}`;
-                p.textContent = `Từ ${arr_money[d]}đ`;
-            }
-
+            name.textContent = `Sài Gòn - ${arr_place[d]}`;
+            p.textContent = `Từ ${arr_money[d]}đ`;
         }
     }
-
-    // Hàm kiểm tra kích thước màn hình
-    function isMobile() {
-        return window.innerWidth <= 740;
-    }
-
-    // Hàm cập nhật hình ảnh theo số lượng mong muốn (2 hoặc 4)
-    function update2(count) {
-        var route = document.querySelectorAll(".route");
-
-        for (var i = 0; i < route.length; i++) {
-            var d = (index + i) % arr_hinh2.length;
-            var e = route[i].querySelector(".img-route");
-            e.src = arr_hinh2[d];
-
-            var name = route[i].querySelector(".route-name");
-            var p = route[i].querySelector(".route-price");
-
-            if (d === 3) {
-                name.textContent = "Sài Gòn - Đồng Tháp";
-                p.textContent = "Từ 350.000đ";
-            } else {
-                name.textContent = `Sài Gòn - ${arr_place[d]}`;
-                p.textContent = `Từ ${arr_money[d]}đ`;
-            }
-
-            // Ẩn hoặc hiển thị hình ảnh tùy theo số lượng mong muốn
-            if (i >= count) {
-                e.style.display = "none";
-                name.style.display = "none";
-                p.style.display = "none";
-            } else {
-                e.style.display = "block";
-                name.style.display = "block";
-                p.style.display = "block";
-            }
-        }
-    }
-
-    if (isMobile()) {
-        update2(2); //  
-    } else {
-        update(); 
-    }
-
-    
-    window.addEventListener("resize", function () {
-        if (isMobile()) {
-            update2(2);
-        } else {
-            update();
-        }
-    });
+    update();
 }
 /*chuyển trang khi nhấn nút tìm kiếm bảng thông báo tuyến đường chưa hỗ trợ*/
 {
