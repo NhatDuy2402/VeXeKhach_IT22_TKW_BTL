@@ -214,15 +214,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const r = document.getElementById("image2");
 
     function change() {
-      l.src = images[index];
       index = (index + 1) % images.length;
+      l.src = images[index];
+      r.src = images[(index + 1) % images.length];
+     
     }
-
     setInterval(change, 3000); 
-
-    l.addEventListener('load', function () {
-      r.src = images[index];
-    });
   }
   //----------------------------------------------------------
   /* 7. hàm ẩn hiện menu của header*/
