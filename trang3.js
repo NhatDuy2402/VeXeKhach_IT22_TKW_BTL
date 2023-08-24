@@ -1,3 +1,4 @@
+// ẩn hiện thông tin trang 3
 function showHide() {
     var x = document.getElementById("infomation-left");
     if (x.style.display === "none") {

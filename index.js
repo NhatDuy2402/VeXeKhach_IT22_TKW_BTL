@@ -32,7 +32,7 @@
     }
 }
 
-//3. chuyển qua lại tuyến đường phổ biến
+//3. dọc file hình ảnh tuyến đường phổ biến
 {
     function loadIndex() {
         fetch("index.json").then(res => res.json()).then(data => {
