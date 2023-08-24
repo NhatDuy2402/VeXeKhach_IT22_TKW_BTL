@@ -193,18 +193,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // 6. thay đổi ảnh bên trái và phải phần quảng cáo
   {
     const images = [
-      "./imgs/ads1.jpeg",
+      // "./imgs/ads1.jpeg",
       "./imgs/ads2.jpeg",
-      "./imgs/ads3.jpeg",
-      "./imgs/ads4.jpeg",
+      // "./imgs/ads3.jpeg",
+      // "./imgs/ads4.jpeg",
       "./imgs/ads5.jpeg",
       "./imgs/ads6.jpeg",
       "./imgs/ads7.jpeg",
       "./imgs/ads8.jpeg",
       "./imgs/ads9.jpeg",
-      "./imgs/ads10.jpeg",
-      "./imgs/ads11.jpeg",
-      "./imgs/ads12.jpeg",
+      // "./imgs/ads10.jpeg",
+      // "./imgs/ads11.jpeg",
+      // "./imgs/ads12.jpeg",
       "./imgs/ads13.jpeg",
       "./imgs/ads14.jpeg",
     ];
