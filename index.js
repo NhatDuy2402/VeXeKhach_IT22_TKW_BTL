@@ -202,7 +202,6 @@
     });
 }
 
-// hiện biểu tượng tuyến đường không hỗ trợ
 {
     const close = document.querySelector('.close2');
     const tb = document.getElementById('notification');
